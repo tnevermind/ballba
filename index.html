@@ -5,36 +5,37 @@
 		body {
 			background-color: #ffffff;
 		}
-		
+
 		h1 {
 			color: #000000;
 			font-size: 100px;
-			font-family: Arial;
+			font-family: Arial,monospace;
 		}
 		p {
 			color: #000000;
 			font-size: 160px;
-			font-family: Arial;
+			font-family: Arial,monospace;
 		}
-		
-		
-   
+
+
+
 	</style>
 	<meta http-equiv="refresh" content="121" >
 </head>
 <body>
 	<h1>Dummes Datum:
 		<br>
-		
-	  </h1>	
+
+	  </h1>
  <p>
 <br>
 <script>
-	document.write(new Date().toLocaleTimeString()+' '+new Date().toLocaleDateString());
+	let dateObj = new Date();
+	document.write('Tag ' + dateObj.getDate() + ' - ' + dateObj.getHours() + ':' + dateObj.getMinutes() + ':' + dateObj.getSeconds());
 	</script>
-	 
-	 
+
+
 	</p>
-	
+
 </body>
 </html>
