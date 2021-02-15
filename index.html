@@ -1,41 +1,53 @@
-
+<html lang="DE">
 <head>
 	<title>"Datum fuer Kindle Schrott Browser"</title>
 	<style>
 		body {
 			background-color: #ffffff;
-		}
 
+		}
 		h1 {
 			color: #000000;
 			font-size: 100px;
-			font-family: Arial,monospace;
+			text-align: center;
+			font-family: 'Courier New', monospace;
 		}
 		p {
 			color: #000000;
 			font-size: 160px;
-			font-family: Arial,monospace;
+			text-align: center;
+			font-family: 'Courier New', monospace;
 		}
-
-
-
 	</style>
-	<meta http-equiv="refresh" content="121" >
-</head>
-<body>
-	<h1>Dummes Datum:
-		<br>
-
-	  </h1>
- <p>
-<br>
-<script>
-	let dateObj = new Date();
-	document.write('Tag ' + dateObj.getDate() + ' - ' + dateObj.getHours() + ':' + dateObj.getMinutes() + ':' + dateObj.getSeconds());
+	<script>
+		function startTime() {
+			let today = new Date(); // brauchen nur 1 Datumsobjekt
+			let d = addLeadingZero(today.getDate())
+			let dateString = 'Tag ' + d;
+			let h = addLeadingZero(today.getHours());
+			let m = addLeadingZero(today.getMinutes());
+			let s = addLeadingZero(today.getSeconds());
+			let timeString = h + ":" + m + ":" + s;
+			// Schreibe Text in den Block, der die ID "datumsblock" hat
+			document.getElementById('datumsblock').innerHTML = dateString + '<br>' + timeString;
+			// Timer alle 0.5 Sekunden refresh
+			setTimeout(startTime, 500);
+		}
+		function addLeadingZero(i) {
+			if (i < 10) {i = "0" + i}  // schreib ne 0 damit immer 2 stellig
+			return i;
+		}
 	</script>
+</head>
+<body onload="startTime()"> <!-- Ruf Funktion auf, die wir oben definiert haben -->
+<h1>-= Dummes Datum =-
+	<br>
 
-
-	</p>
+</h1>
+<br>
+<p id="datumsblock">
+	<!-- Hier kommt der Text durch Javascript rein -->
+</p>
 
 </body>
 </html>
