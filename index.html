@@ -20,7 +20,7 @@
 
 
 	</style>
-	<meta http-equiv="refresh" content="121" >
+	<meta http-equiv="refresh" content="11" >
 </head>
 <body>
 	<h1>Dummes Datum:
@@ -33,7 +33,9 @@
 	let dateObj = new Date();
 	document.write('Tag ' + dateObj.getDate() + ' - ' + dateObj.getHours() + ':' + dateObj.getMinutes() + ':' + dateObj.getSeconds());
 	</script>
-
+<script>
+  document.write(new Date().toLocaleTimeString()+' '+new Date().toLocaleDateString());
+  </script>
 
 	</p>
 
